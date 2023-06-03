@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+    
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <div class="container">
+        <input type="number" id="temperatureInput" placeholder="Enter temperature" required>
+        <select id="unitSelection">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <button id="convertButton">Convert</button>
+        <p id="result"></p>
+    </div>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            background-color: blueviolet;
+           border-radius: 50%;
+           padding-bottom: 50px;
+          padding: 40px;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            
+        }
+        
+        input {
+            width: 150px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        
+        select {
+            padding: 5px;
+            margin-right: 10px;
+        }
+        
+        button {
+            padding: 5px 10px;
+        }
+        
+        p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        
+    </style>
+    <script src="script.js"></script>
+</body>
+</html>

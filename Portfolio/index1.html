@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<section>
+    <img   class="Image" src="./profile.jpeg" alt="" style="height: 450px; " >
+</section>
+  <section id="home">
+    <div class="container">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Hello, I'm Akansha. I'm a Web devloper  based in Wardha.
+        I am pursuing my BE in Cummins college of engneering.
+        I am very exited to  present my idea about a shot portfolio 
+        based on html css javascript. So here it is      </p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Presently, I am employed as a student in 2nd year in BE in Cummins college of engneering nagpur 
+        I am very good at web development and practicing it since 1 year , I am 
+      </p>
+    </div>
+  </section>
+
+ 
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>You can reach me at akanshahajare123@gmail.com  </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023  Akansha. All rights reserved.</p>
+    </div>
+  </footer>
+<style>
+    img{
+        border: solid black;
+        margin: 5%;
+        border-radius: 10px;
+        margin-left: 43%;
+    }
+</style>
+  <script>
+// Smooth scrolling for anchor links
+const navLinks = document.querySelectorAll('nav ul li a');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+// Form submission handling
+const form = document.querySelector('#contact form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Collect form data
+  const name = form.elements['name'].value;
+  const email = form.elements['email'].value;
+  const message = form.elements['message'].value;
+
+  // Perform validation (add your own validation logic here)
+
+  // Example: Check if any field is empty
+  if (name === '' || email === '' || message === '') {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  // Example: Send form data to server (you will need backend implementation for this)
+  // Replace the URL with the appropriate endpoint
+  const url = 'https://example.com/submit-form';
+
+  // Create an object with form data
+  const formData = {
+    name: name,
+    email: email,
+    message: message
+  };
+
+  // Make a POST request to the server
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Form submitted successfully
+        alert('Form submitted successfully!');
+        form.reset();
+      } else {
+        // Form submission failed
+        alert('Form submission failed.');
+      }
+    })
+    .catch((error) => {
+      console.log('Error:', error);
+      alert('An error occurred. Please try again later.');
+    });
+});
+
+  </script>
+
+</body>
+
+</html>
